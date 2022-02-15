@@ -18,6 +18,22 @@ class MyUser(AbstractUser):
 surname - {self.last_name}, age - {datetime.timezone.now() - self.birth_date}"
 
 
+class Products(models.Model):
+    name = models.CharField(max_length=180)
+    price = models.DecimalField(default=1.0)
+    image = models.ImageField(blank=True, null=True)
+    quantity_in_stock = models.IntegerField(default=0)
+
+    description = models.TextField()
+    shortdesc = description[:40]
+ 
+    class Meta:
+        ordering = ["name, price"]
+        verbose_name_plural = "Products"
+
+    def __str__(self):
+        return f'Product {self.name}, quantity {self.quantity_in_stock} \n \
+        {self.shortdesc} price{self.price}'
 
 
 
