@@ -73,11 +73,16 @@ WSGI_APPLICATION = 'educational_online_store.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+AUTH_USER_MODEL = 'myapp.MyUser' 
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'storedb',
+        'USER': 'mydbuser',
+        'PASSWORD': 'mydbuserpassword',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -85,7 +90,6 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
-AUTH_USER_MODEL = 'myapp.MyUser' 
 
 AUTH_PASSWORD_VALIDATORS = [
     {
