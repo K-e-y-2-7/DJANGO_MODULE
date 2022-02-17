@@ -13,5 +13,5 @@ class MyUser(AbstractUser):
         verbose_name_plural = 'MyUser'
 
     def __str__(self) -> str:
-        return  f'Name - {self.first_name}, surname - {self.last_name}'
+        return  self.username
 
