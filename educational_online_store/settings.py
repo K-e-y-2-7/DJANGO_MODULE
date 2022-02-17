@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'myuser',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'educational_online_store.wsgi.application'
 
+AUTH_USER_MODEL = 'myuser.MyUser'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
